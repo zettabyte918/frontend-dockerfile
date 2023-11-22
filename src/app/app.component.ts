@@ -13,8 +13,11 @@ export class AppComponent implements OnInit {
   constructor(private api: ApiService) { }
 
   ngOnInit(): void {
-    this.api.getMessage().subscribe((res: any) => {
-      this.message = res.message;
-    })
+    setTimeout(() => {
+      this.api.getMessage().subscribe((res: any) => {
+        this.message = res.message;
+      })
+    }, 1000);
+
   }
 }
